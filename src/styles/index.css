@@ -1,0 +1,83 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "@fontsource/nunito";
+@import "@fontsource/nunito/300.css";
+@import "@fontsource/nunito/600.css";
+@import "@fontsource/nunito/700.css";
+@import "@fontsource/nunito/800.css";
+
+/* @import "tailwind/preflight"; */
+/* @import "tailwind/utilities"; */
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-display: "Nunito";
+  --default-font-family: var(--font-display);
+  --color-primary-100: #c12116;
+  --color-accent-Red: #d9206e;
+  --color-accent-Green: #079455;
+  --color-accent-Yellow: #fdb022;
+  --color-neutral-25: #0a0d12;
+  --color-neutral-400: #a4a7ae;
+  --color-neutral-600: #535862;
+  --color-neutral-900: #181d27;
+}
+
+/* =========================
+   Global Reset & Defaults
+   ========================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0 auto;
+  font-family: "Nunito";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  max-width: 1440px;
+}
+
+/* Remove input autofill background (Chrome) */
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  -webkit-text-fill-color: inherit;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Button reset */
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* Image behavior */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+section {
+  margin: 0 auto;
+}
+
+/* Scrollbar (optional, clean mobile look) */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+}
