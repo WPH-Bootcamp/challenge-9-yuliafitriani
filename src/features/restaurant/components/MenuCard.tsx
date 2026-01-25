@@ -31,15 +31,20 @@ export function MenuCard({
       )}
     >
       {/* Image */}
-      <img
-        src={image}
-        alt={name}
+      <div
         className="
-          w-[172.5px]
-          h-[172.5px]
+          h-[172px]"
+      >
+        <img
+          src={image}
+          alt={name}
+          className="
+          w-auto
+          h-[172px]
           object-cover
         "
-      />
+        />
+      </div>
 
       {/* Content */}
       <div className="flex flex-col gap-4 p-3 h-full">
@@ -60,11 +65,12 @@ export function MenuCard({
           className="
             h-9
             rounded-full
-            bg-[#C12116]
+            bg-primary-100
             hover:bg-[#a91c13]
             font-nunito
             text-sm
             font-bold
+            text-neutral-50
           "
         >
           Add

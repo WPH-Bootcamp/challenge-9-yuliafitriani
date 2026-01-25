@@ -57,8 +57,6 @@ input:-webkit-autofill {
 
 /* Button reset */
 button {
-  border: none;
-  background: none;
   cursor: pointer;
 }
 
