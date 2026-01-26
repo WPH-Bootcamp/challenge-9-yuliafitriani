@@ -9,22 +9,22 @@ export default function RestaurantList() {
   const navigate = useNavigate();
   const { data, isFetching } = useRestaurants({
     page,
-    limit: 3,
+    limit: 6,
   });
 
   const restaurants = data?.data.restaurants ?? [];
   const pagination = data?.data.pagination;
 
   return (
-    <section
+    <div
       className="
         flex flex-col items-center
         gap-4
         px-4
         pt-6
         pb-12
-        max-w-[393px]
         mx-auto
+        lg:w-full
       "
     >
       {/* Header */}
@@ -44,26 +44,27 @@ export default function RestaurantList() {
           See All
         </span>
       </div>
-      {/* Cards */}
-      {restaurants.map((resto) => (
-        <RestaurantCard
-          key={resto.id}
-          name={resto.name}
-          star={resto.star}
-          place={resto.place}
-          distance={resto.distance}
-          logo={resto.logo}
-          onClick={() => navigate(`/resto/${resto.id}`)}
-        />
-      ))}
+      <div className="grid grid-col lg:grid-cols-3 w-full gap-4">
+        {/* Cards */}
+        {restaurants.map((resto) => (
+          <RestaurantCard
+            key={resto.id}
+            name={resto.name}
+            star={resto.star}
+            place={resto.place}
+            distance={resto.distance}
+            logo={resto.logo}
+            onClick={() => navigate(`/resto/${resto.id}`)}
+          />
+        ))}
 
-      {/* Show More Button */}
-      {pagination && page < pagination.totalPages && (
-        <Button
-          variant="outline"
-          disabled={isFetching}
-          onClick={() => setPage((prev) => prev + 1)}
-          className="
+        {/* Show More Button */}
+        {pagination && page < pagination.totalPages && (
+          <Button
+            variant="outline"
+            disabled={isFetching}
+            onClick={() => setPage((prev) => prev + 1)}
+            className="
             mt-2
             w-[160px]
             h-10
@@ -73,10 +74,11 @@ export default function RestaurantList() {
             text-sm
             font-medium
           "
-        >
-          {isFetching ? "Loading..." : "Show More"}
-        </Button>
-      )}
-    </section>
+          >
+            {isFetching ? "Loading..." : "Show More"}
+          </Button>
+        )}
+      </div>
+    </div>
   );
 }
