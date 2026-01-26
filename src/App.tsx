@@ -1,7 +1,7 @@
 import "./styles/App.css";
 import { Routes, Route } from "react-router-dom";
 import { AuthBootstrap } from "./app/provider/auth-bootstrap";
-import LoginPage from "./pages/LoginPage";
+import LoginPage from "./pages/AuthPage";
 import HomePage from "./pages/HomePage";
 import RestoDetailPage from "./pages/RestoDetailPage";
 
