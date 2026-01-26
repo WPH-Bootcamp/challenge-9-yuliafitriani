@@ -1,5 +1,8 @@
-import { Facebook, Instagram } from "iconsax-react";
 import { Logo } from "@/components/Logo";
+import FbIcon from "@/assets/fb.svg";
+import IgIcon from "@/assets/ig.svg";
+import InIcon from "@/assets/linkedin.svg";
+import TiktokIcon from "@/assets/tiktok.svg";
 
 const exploreLinks = [
   "All Food",
@@ -17,25 +20,6 @@ const helpLinks = [
   "FAQ",
   "Contact Us",
 ];
-
-function SocialIcon({
-  children,
-  label,
-}: {
-  children: React.ReactNode;
-  label: string;
-}) {
-  return (
-    <button
-      type="button"
-      aria-label={label}
-      className="h-11 w-11 rounded-full border border-white/10 bg-white/5 grid place-items-center
-                 text-white/90 hover:bg-white/10 transition"
-    >
-      {children}
-    </button>
-  );
-}
 
 function FooterList({ title, items }: { title: string; items: string[] }) {
   return (
@@ -70,7 +54,7 @@ export function Footer() {
             {/* brand */}
             <div className="col-span-5 space-y-6">
               <div className="flex items-center gap-3">
-                <Logo showText={false} />
+                <Logo className="text-white" />
               </div>
 
               <p className="max-w-sm text-sm leading-7 text-white/70">
@@ -84,12 +68,34 @@ export function Footer() {
                   Follow on Social Media
                 </div>
                 <div className="flex items-center gap-3">
-                  <SocialIcon label="Facebook">
-                    <Facebook />
-                  </SocialIcon>
-                  <SocialIcon label="Instagram">
-                    <Instagram />
-                  </SocialIcon>
+                  <img
+                    src={FbIcon}
+                    alt="Facebook Logo"
+                    width={40}
+                    height={40}
+                    className="object-contain"
+                  />
+                  <img
+                    src={IgIcon}
+                    alt="Instagram logo"
+                    width={40}
+                    height={40}
+                    className="object-contain"
+                  />
+                  <img
+                    src={InIcon}
+                    alt="LinkedIn logo"
+                    width={40}
+                    height={40}
+                    className="object-contain"
+                  />
+                  <img
+                    src={TiktokIcon}
+                    alt="Tiktok logo"
+                    width={40}
+                    height={40}
+                    className="object-contain"
+                  />
                 </div>
               </div>
             </div>
@@ -123,12 +129,27 @@ export function Footer() {
                   Follow on Social Media
                 </div>
                 <div className="flex items-center gap-3">
-                  <SocialIcon label="Facebook">
-                    <Facebook />
-                  </SocialIcon>
-                  <SocialIcon label="Instagram">
-                    <Instagram />
-                  </SocialIcon>
+                  <img
+                    src={IgIcon}
+                    alt="Instagram logo"
+                    width={40}
+                    height={40}
+                    className="object-contain"
+                  />
+                  <img
+                    src={InIcon}
+                    alt="LinkedIn logo"
+                    width={40}
+                    height={40}
+                    className="object-contain"
+                  />
+                  <img
+                    src={TiktokIcon}
+                    alt="Tiktok logo"
+                    width={40}
+                    height={40}
+                    className="object-contain"
+                  />
                 </div>
               </div>
             </div>

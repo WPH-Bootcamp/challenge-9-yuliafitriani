@@ -4,10 +4,12 @@ import Header from "@/features/layout/ui/Header";
 
 export default function RestoDetailPage() {
   return (
-    <>
+    <section>
       <Header />
-      <RestaurantDetailTemplate />
+      <div className="lg:max-w-[1200px] mx-auto px-4 mt-20">
+        <RestaurantDetailTemplate />
+      </div>
       <Footer />
-    </>
+    </section>
   );
 }

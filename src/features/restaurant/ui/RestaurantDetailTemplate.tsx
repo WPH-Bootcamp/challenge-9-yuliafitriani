@@ -4,6 +4,8 @@ import { useRestoDetail } from "@/features/restaurant/hooks/use-resto-detail";
 import MenuTab from "../components/MenuTab";
 import RestoDetailMenus from "@/features/restaurant/ui/MenuList";
 import type { Menu } from "@/entities/restaurant/api/resto-detail.api";
+import RestoHero from "./RestoHero";
+import { RestaurantCard } from "@/features/restaurant/components/RestaurantCard";
 
 type MenuTabType = "all" | "food" | "drink";
 
@@ -25,7 +27,26 @@ export default function RestaurantDetailTemplate() {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <div className="px-4">
+    <div>
+      <RestoHero
+        images={resto?.images ?? []}
+        name={resto?.name}
+        location={resto?.distance}
+      />
+
+      {/* Resto Info */}
+      <div className="mt-6 max-w-[1200px] mx-auto px-4 lg:px-0">
+        {resto && (
+          <RestaurantCard
+            key={resto.id}
+            name={resto.name}
+            star={resto.star}
+            place={resto.place}
+            distance={resto.distance}
+            logo={resto.logo}
+          />
+        )}
+      </div>
       <h1 className="text-xl font-extrabold my-4">Menu</h1>
 
       {/* TAB */}

@@ -6,8 +6,10 @@ export default function HomeTemplate() {
   return (
     <section>
       <Hero />
-      <Category />
-      <RestaurantList />
+      <div className="max-w-[1200px] mx-auto">
+        <Category />
+        <RestaurantList />
+      </div>
     </section>
   );
 }

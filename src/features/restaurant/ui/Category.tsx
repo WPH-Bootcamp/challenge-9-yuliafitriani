@@ -8,7 +8,7 @@ import LunchSvg from "@/assets/lunch.svg";
 
 export default function Category() {
   return (
-    <div className="grid grid-cols-3 gap-4 py-6 px-4">
+    <div className="grid grid-cols-3 lg:grid-cols-6 gap-4 py-6 px-4">
       <CategoryCard
         className="w-full"
         title="All Restaurant"
