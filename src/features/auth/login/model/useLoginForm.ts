@@ -1,25 +1,44 @@
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { loginSchema } from "./login.schema";
-import type { LoginFormValues } from "./login.schema";
-import { useLogin } from "./useLogin";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { loginApi } from "../api/login.api";
 
-export const useLoginForm = () => {
-  const loginMutation = useLogin();
+type LoginFormValues = {
+  email: string;
+  password: string;
+};
 
-  const form = useForm<LoginFormValues>({
-    resolver: zodResolver(loginSchema),
-    mode: "onSubmit",
-  });
+export function useLoginForm() {
+  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
 
-  const onSubmit = (values: LoginFormValues) => {
-    loginMutation.mutate(values);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<LoginFormValues>();
+
+  const onSubmit = async (data: LoginFormValues) => {
+    try {
+      setIsLoading(true);
+
+      // 🔐 call API login
+      await loginApi(data); // ← ganti dengan API kamu
+
+      // ✅ success → redirect
+      navigate("/");
+    } catch (error) {
+      // handle error (toast / form error)
+      console.error(error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return {
-    register: form.register,
-    handleSubmit: form.handleSubmit(onSubmit),
-    errors: form.formState.errors,
-    isLoading: loginMutation.isPending,
+    register,
+    handleSubmit: handleSubmit(onSubmit),
+    errors,
+    isLoading,
   };
-};
+}

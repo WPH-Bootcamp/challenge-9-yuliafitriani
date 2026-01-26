@@ -11,7 +11,7 @@ export default function RestoDetailMenus({ menus }: Props) {
   const dispatch = useDispatch();
 
   return (
-    <div className="grid grid-cols-2 w-full gap-4 pb-2">
+    <div className="grid grid-cols-2 lg:grid-cols-4 w-full gap-4 pb-2">
       {menus.map((menu) => (
         <MenuCard
           className="w-full"
@@ -26,6 +26,7 @@ export default function RestoDetailMenus({ menus }: Props) {
                 name: menu.foodName,
                 price: menu.price,
                 image: menu.image,
+                qty: 1,
               }),
             )
           }

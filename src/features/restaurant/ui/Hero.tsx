@@ -10,7 +10,7 @@ export default function Hero() {
         className="
           absolute
           top-0
-          w-[1440px]
+          w-full
           h-[700px]
           object-cover
           z-0
