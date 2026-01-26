@@ -1,3 +1,5 @@
+import LogoImage from "@/assets/logo.svg";
+
 type LogoProps = {
   size?: number;
   showText?: boolean;
@@ -8,7 +10,7 @@ export function Logo({ size = 32, showText = true }: LogoProps) {
     <div className="flex items-center gap-[11.43px]">
       {/* SVG Logo */}
       <img
-        src="./src/assets/logo.svg"
+        src={LogoImage}
         alt="Foody logo"
         width={size}
         height={size}

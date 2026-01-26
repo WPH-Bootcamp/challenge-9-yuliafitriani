@@ -6,7 +6,7 @@ interface CartItem {
   name: string;
   price: number;
   image: string;
-  quantity: number;
+  qty: number;
 }
 
 interface CartState {
@@ -27,11 +27,11 @@ const cartSlice = createSlice({
       );
 
       if (existing) {
-        existing.quantity += 1;
+        existing.qty += 1;
       } else {
         state.items.push({
           ...action.payload,
-          quantity: 1,
+          qty: 1,
         });
       }
     },

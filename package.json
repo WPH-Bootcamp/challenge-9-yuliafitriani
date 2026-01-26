@@ -26,6 +26,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "dayjs": "^1.11.19",
+    "iconsax-react": "^0.0.8",
     "iconsax-reactjs": "^0.0.8",
     "lucide-react": "^0.562.0",
     "react": "^19.2.0",
